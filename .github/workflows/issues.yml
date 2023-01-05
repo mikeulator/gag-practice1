@@ -8,3 +8,6 @@ jobs:
           echo "Event: ${{ github.event.issue.event }}"
           echo "Commit ID: ${{ github.event.issue.commit_id }}"
           echo "Column Name: ${{ github.event.issue.column_name }}"
+  full_output:
+    - name: Print full output
+      run: echo "${{ toJSON(github) }}"
