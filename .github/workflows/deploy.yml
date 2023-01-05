@@ -4,6 +4,8 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v3
       - name: Setup
         run: npm install
       - name: Linter
@@ -11,6 +13,8 @@ jobs:
   test:
     runs-on: ubuntu-lastest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v3
       - name: Setup
         run: npm install
       - name: Unit Tests
@@ -19,6 +23,8 @@ jobs:
     needs: test
     runs-on: ubuntu-lastest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v3
       - name: Setup
         run: npm install
       - name: Build Package
