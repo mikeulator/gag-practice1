@@ -4,15 +4,27 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
+      - name: Setup
+        run: npm ci
       - name: Linter
         run: npm run lint
   test:
     runs-on: ubuntu-lastest
     steps:
+      - name: Setup
+        run: npm ci
       - name: Unit Tests
         run: npm run test
-  deploy:
+  build:
     needs: test
+    runs-on: ubuntu-lastest
+    steps:
+      - name: Setup
+        run: npm ci
+      - name: Build Package
+        run: npm run build
+  deploy:
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - name: Deploy code
