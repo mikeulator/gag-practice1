@@ -1,0 +1,19 @@
+name: Deploy Pipeline
+on: push
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Linter
+        run: npm run lint
+  test:
+    runs-on: ubuntu-lastest
+    steps:
+      - name: Unit Tests
+        run: npm run test
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy code
+        run: echo "Deploying.... Done!"

@@ -1,0 +1,10 @@
+name: Issues Reporter
+on: issues
+jobs:
+  output:
+    - name: Print output
+      run: |
+          echo "Event ID: ${{ github.event.issue.number }}"
+          echo "Event: ${{ github.event.issue.event }}"
+          echo "Commit ID: ${{ github.event.issue.commit_id }}"
+          echo "Column Name: ${{ github.event.issue.column_name }}"
