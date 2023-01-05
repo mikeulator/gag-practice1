@@ -8,10 +8,10 @@ jobs:
         uses: actions/checkout@v3
       - name: Print output
         run: |
-            echo "Event ID: ${{ github.event.issue.number }}"
-            echo "Event: ${{ github.event.issue.event }}"
-            echo "Commit ID: ${{ github.event.issue.commit_id }}"
-            echo "Column Name: ${{ github.event.issue.column_name }}"
+            echo "Event ID: ${{ github.event.issue.id }}"
+            echo "Author: ${{ github.event.issue.author_association }}"
+            echo "Title: ${{ github.event.issue.title }}"
+            echo "Body: ${{ github.event.issue.body }}"
   full_output:
     runs-on: ubuntu-latest
     steps:
